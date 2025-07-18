@@ -11,13 +11,13 @@
   }
 
   body {
-    /* Remove border-radius from body, use it on .container instead */
-    background-image: url("Trusted-Shops_Logo_rounded.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-    /* No border-radius here */
+      /* Remove border-radius from body, use it on .container instead */
+      background-image: url("Trusted-Shops_Logo_rounded.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      /* No border-radius here */
   }
 
 
@@ -31,7 +31,7 @@
       margin-top: 20px;
       margin-bottom: 20px;
       opacity: 1;
-       border-radius: 90px;
+
 
   }
 
@@ -73,6 +73,7 @@
       padding: 30px;
       border-bottom: 1px solid #e9ecef;
       opacity: 0.75;
+      border-radius: 10px;
   }
 
   .nav-menu h3 {
