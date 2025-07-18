@@ -205,6 +205,7 @@
                 </div>
 
                 <ul>
+                    <li><strong>The review.submitted</strong></li>
                     <li>First copy the dates</li>
                     <li>Go to the tab "Time converter"</li>
                     <li>Paste the selected date in the cell A2</li>
@@ -214,6 +215,15 @@
                         click 'Run'</li>
                     <li>Check then in the Service Reviews tab if the review.submitted converted dates are not in the
                         future, for that filter the column 'O', if you see 'Future', please apply changes manually</li>
+                </ul>
+                <ul>
+                    <li><strong>The review.replyOn</strong></li>
+
+                    <li>First copy the dates</li>
+                    <li>Go to the tab "Time converter"</li>
+                    <li>Paste the selected date in the cell A2</li>
+                    <li>Choose the developer tool in the Excel toolbar</li>
+                    <li>Click on Macro</li>
                     <li>For the review.replyOn: Select the Macro named: "ConvertDatesInTableToStandardFormatsReply" and
                         click 'Run'</li>
                     <li>Check then in the Service Reviews tab if the review.replyOn converted dates are in the future,
@@ -233,10 +243,13 @@
 
                             From time to time you will see cases for which the reviews needs to be imported as verified.
                             For those imports, you need to make sure that the customer is listed on the Github page.
-                            <div> <strong>YOU NEED TO HAVE A GITHUB ACCOUNT WITH YOU TRUSTEDSHOPS EMAIL TO ACCESS THIS LINK</strong> </div>
-                           
-                            <a href="https://github.com/trustedshops/mars/blob/master/packages/customer-review-importer/src/config/import-settings.ts">List
-                                of verified accounts.</a> Once it is verified, you will need to copy all the data in the file without modifying any of
+                            <div> <strong>YOU NEED TO HAVE A GITHUB ACCOUNT WITH YOU TRUSTEDSHOPS EMAIL TO ACCESS THIS
+                                    LINK</strong> </div>
+
+                            <a
+                                href="https://github.com/trustedshops/mars/blob/master/packages/customer-review-importer/src/config/import-settings.ts">List
+                                of verified accounts.</a> Once it is verified, you will need to copy all the data in the
+                            file without modifying any of
                             them. Then process the import as normal.
 
                         </div>
