@@ -50,7 +50,7 @@ function scrollToBefore(button) {
     const currentSection = button.closest('.section');
     if (!currentSection) return;
 
-    // Find the next sibling that is also a section
+    // Find the previous sibling that is also a section
     let previousSection = currentSection.previousElementSibling;
     while (previousSection && !previousSection.classList.contains('section')) {
         previousSection = previousSection.nextElementSibling;
