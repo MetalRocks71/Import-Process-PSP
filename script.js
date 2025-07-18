@@ -44,6 +44,36 @@ function scrollToNext(button) {
         }
     
 
+// navigate to previous section
+function scrollToBefore(button) {
+    // Ensure the button is inside a section
+    const currentSection = button.closest('.section');
+    if (!currentSection) return;
 
+    // Find the next sibling that is also a section
+    let previousSection = currentSection.previousElementSibling;
+    while (previousSection && !previousSection.classList.contains('section')) {
+        previousSection = previousSection.nextElementSibling;
+    }
+
+    // Scroll to the previous section if found
+    if (previousSection) {
+        previousSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        } else {
+                // If no previous section, scroll to top
+                scrollToTop();
+            }
+        }
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    
 
 
