@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="report.css">
+    <title> ⏬ Import Case S.O.P Guide ⏬</title>
+    <script src="script.js"></script>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="header" id="top">
+            <h1>Import Case SOP Guide</h1>
+            <h2>Created on July 2025</h2>
+        </div>
+
+        <div class="nav-menu">
+            <h3>Quick Navigation Menu</h3>
+            <div class="nav-links">
+                <a onclick="scrollToSection('queue-prep')" class="nav-link">1. Queue Preparation & Case Review
+                    (SalesForce)</a>
+                <a onclick="scrollToSection('data-validation')" class="nav-link">2. Check Data Validation</a>
+                <a onclick="scrollToSection('service-review')" class="nav-link">3. Service Review Import</a>
+                <a onclick="scrollToSection('product-review')" class="nav-link">4. Product Review Import</a>
+                <a onclick="scrollToSection('reply-comments')" class="nav-link">5. Reply Comments</a>
+                <a onclick="scrollToSection('quality-control')" class="nav-link">6. Quality Control</a>
+                <a onclick="scrollToSection('data-integrity')" class="nav-link">7. Data Integrity</a>
+                <a onclick="scrollToSection('import-process')" class="nav-link">8. Import Process</a>
+                <a onclick="scrollToSection('completion')" class="nav-link">9. Case Completion and Management</a>
+                <a onclick="scrollToSection('import-report')" class="nav-link">10. Reviews Import Report</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div id="queue-prep" class="section">
+                <h2>1. Import Queue and Case Review</h2>
+                <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+                <button id="section_1" class="next-section" onclick="scrollToNext(this)">Next Section</button>
+
+                <h3>Setting-up the Import Queue</h3>
+                <p>You may either create a dedicated case import queue or add the import case to your existing personal
+                    queue.</p>
+
+                <h4>How to create a personal import queue?</h4>
+                <ul>
+                    <li>Select the main import queue</li>
+                    <li>Clone the queue and assign your preferred name</li>
+                    <li>Save the newly created queue</li>
+                    <li>Ensure all necessary filters are applied (see below)</li>
+                </ul>
+
+                <div class="section-filters">ADD THE FILTERS</div>
+                <ul>
+                    <li><strong>(1) Filter by Owner</strong> = My cases</li>
+                    <li><strong>(2) Status</strong> = not equal to Closed</li>
+                    <li><strong>(3) Case reason</strong> = Review Import</li>
+                    <li><strong>(4) Case Owner Alias</strong> = Retrieve the Alias in the Settings under the section
+                        "View Profile" in Salesforce</li>
+                </ul>
+
+                <h3>Case Types and Requirements to Process</h3>
+                <p>There are two distinct import case types:</p>
+
+                <div class="field-spec">
+                    <strong>Service Reviews (SR)</strong>
+                    <strong>Requires signed license as attachment</strong>
+                    <strong>Name of the review provider (e.g: eKomi)</strong>
+                    <strong>If the provider is not a certified Google provider choose the "Non-Certified Service Review
+                        Provider" in the issue type of the case</strong>
+                </div>
+
+                <div class="field-spec">
+                    <strong>Product Reviews (PR)</strong>
+                </div>
+
+                <div class="important-note">
+                    <div>
+                        <strong>Service reviews import must have the signed license added to the case.</strong> If the
+                        license is missing, reject the case and send it back to CSM. Then, in the
+                        Review_Import-Cases_2025 in the column "Rejected Case Reason" click on the dropdown menu and
+                        select "Import process not followed" after that in the same file in the column "F" type "Sent
+                        Back to CSM". Please refer to the section 10 (Review Import Report) of the page to know how to
+                        use the report.
+                    </div>
+                </div>
+
+                <h3>Case Creation Guidelines</h3>
+                <ul>
+                    <li>The CSM must indicate the import type PR or SR</li>
+                    <li>Each import requires a separate case (One for the Service Review and one for the Product
+                        Reviews)</li>
+                    <li>One import per channel ID per type</li>
+                </ul>
+
+                <div class="important-note">
+                    <div>
+                        If there is more than one file in the case, send back to CSM and ask him/her to create separate
+                        cases, then populate the Review import report with the correct 'Rejected Case Reason'.
+                    </div>
+                </div>
+            </div>
+
+            <div id="data-validation" class="section">
+                <h2>2. Data Validation Procedure</h2>
+                <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+                <button id="section_2" class="next-section" onclick="scrollToNext(this)">Next Section</button>
+
+                <h3>Pre-import Verification</h3>
+                <h4>Check for Previous Imports:</h4>
+                <ul>
+                    <li>Access the MetaBase Reviews table and filter the "client" column</li>
+                    <li>Search for "REVIEW_IMPORT_FILE_UPLOAD"</li>
+                    <li>For recent imports, please refer to the integration note in the case</li>
+                </ul>
+
+                <h4>Channel ID Verification</h4>
+                <ul>
+                    <li>Verify the channel ID in the provided file matches the 'eTrusted channel reference' field in the
+                        Shop detail window in Salesforce</li>
+                    <li>If discrepancies exist, use the channel ID from the Shop details window</li>
+                    <li>Check if the domain filled in the file matches the one from the shop details window in
+                        Salesforce. If there is a discrepancy, please go to the Account details section in the case and
+                        retrieve the correct domain and replace it in the Shop details window in Salesforce</li>
+                </ul>
+
+                <h4>Data Review Process</h4>
+                <div class="info-box">
+                    <div> Use
+                        <span class="highlight"> Ctrl+Shift+L</span> to apply filters to columns in the file provided
+                        by the customer for thorough data validation. For the below list, it is mandatory to have all
+                        the data filled in. If one data is missing, reject the case and send it back to the CSM. Then in
+                        the Review report file on the SharePoint...
+                    </div>
+                </div>
+            </div>
+
+            <div id="service-review" class="section">
+                <h2>3. Service Review Import Specification</h2>
+                <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+                <button id="section_3" class="next-section" onclick="scrollToNext(this)">Next Section</button>
+
+                <h3>Required Fields (No Blank Values Permitted)</h3>
+                <div class="field-spec">
+                    <strong>channel.id</strong>
+                    <strong>review.locale*</strong>
+                    <div class="no-commas">
+                        <strong>review.rating**** (scale 1-5, no commas)</strong>
+                    </div>
+                    <strong>review.submitted</strong>
+                    <strong>transaction.reference***</strong>
+                </div>
+
+                <div class="warning">
+                    <div>
+                        All service review providers are accepted <span class="highlight">(Exception: Google, Facebook
+                            and eBay for legal restrictions***)</span>
+                        *** If reviews are coming from those providers, please reject the case and in the Review report
+                        on the SharePoint choose the "Import process not followed". Please refer to the section 10
+                        (Review Import Report) of the page to know how to use the report.
+                    </div>
+                </div>
+
+                <h3>Field-Specific Guidelines</h3>
+
+                <h4>*review.locale</h4>
+                <ul>
+                    <li>Multiple locales may be present (e.g., en_GB, nl_NL) in the customer's file</li>
+                    <li>Filter the column and select the locale specified in shop details under Target Market (Link
+                        Generator)</li>
+                    <li>Process the import and notify the CSM accordingly that import were processed for locale linked
+                        to the channel.id only</li>
+                </ul>
+
+                <div class="info-box">
+                    <div>
+                        <strong>FYI:</strong> The locale en-EU must be replaced by en_150 in the import file for
+                        formatting. It might happen that in Salesforce the en-EU is linked to the en-GB market,
+                        therefore the locale for the import must be en_GB and not en_150.
+                        <br><br>
+                        <strong>GOOD TO KNOW:</strong> It might happen that the ratings are not from 1 to 5 but from 1
+                        to 10, therefore you must use the columns AC, AD, AE of the Service_Reviews_Import_Template with
+                        the predefined formula to convert the rating to 1 to 5.
+                        <br><br>
+                        <strong>IMPORTANT:</strong> WE DO NOT ACCEPT TRANSLATED REVIEWS FROM ONE DOMAIN TO ANOTHER. That
+                        means if the customer has two domains registered with us he cannot have for example French
+                        reviews translated and being imported for the Italian domain.
+                    </div>
+                </div>
+
+                <h4>***transaction.reference</h4>
+                <p>If customer-provided file if the "transaction references" cells contain blanks, replace the blank
+                    entries with random transaction references that are automatically created using the formula in the
+                    import formatting file.</p>
+
+                <h4>Review.submitted and review.replyOn</h4>
+                <div class="warning">
+                    <div>
+                        <strong class="info-box">IMPORTANT:</strong>
+                        To be able to convert the review.submitted and review.replyOn (date provided by the customer in
+                        his file), please follow the steps below:
+                    </div>
+                </div>
+
+                <ul>
+                    <li>First copy the dates</li>
+                    <li>Go to the tab "Time converter"</li>
+                    <li>Paste the selected date in the cell A2</li>
+                    <li>Choose the developer tool in the Excel toolbar</li>
+                    <li>Click on Macro</li>
+                    <li>For the review.submitted: Select the Macro named: "ConvertDatesInTableToStandardFormat" and
+                        click 'Run'</li>
+                    <li>Check then in the Service Reviews tab if the review.submitted converted dates are not in the
+                        future, for that filter the column 'O', if you see 'Future', please apply changes manually</li>
+                    <li>For the review.replyOn: Select the Macro named: "ConvertDatesInTableToStandardFormatsReply" and
+                        click 'Run'</li>
+                    <li>Check then in the Service Reviews tab if the review.replyOn converted dates are in the future,
+                        for that filter the column 'U', if you see 'Future', please apply changes manually</li>
+                </ul>
+
+                <div class="video">
+                    <h3><strong>HOW TO CONVERT THE DATE (VIDEO)</strong></h3>
+                    <video src="converted_date.mp4" width="320" height="240" controls></video>
+                    <div class="info-box">
+                        <div>Your browser does not support the video tag. <a href="converted_date.mp4">Here is the link
+                                to the video</a></div>
+                    </div>
+                    <h4><strong>Special Import as verified reviews</h4> </strong>
+                    <div class="warning">
+                        <div> <strong class="info-box">IMPORTANT</strong>
+
+                            From time to time you will see cases for which the reviews needs to be imported as verified.
+                            For those imports, you need to make sure that the customer is listed on the Github page.
+                            <div> <strong>YOU NEED TO HAVE A GITHUB ACCOUNT WITH YOU TRUSTEDSHOPS EMAIL TO ACCESS THIS LINK</strong> </div>
+                           
+                            <a href="https://github.com/trustedshops/mars/blob/master/packages/customer-review-importer/src/config/import-settings.ts">List
+                                of verified accounts.</a> Once it is verified, you will need to copy all the data in the file without modifying any of
+                            them. Then process the import as normal.
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="product-review" class="section">
+                <h2>4. Product Reviews Import Specification</h2>
+                <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+                <button id="section_4" class="next-section" onclick="scrollToNext(this)">Next Section</button>
+
+                <h3>Required Fields (No Blank Values Permitted)</h3>
+                <div class="field-spec">
+                    <strong>channel.id</strong>
+                    <strong>review.locale*</strong>
+                    <div class="no-commas">
+                        <strong>review.rating**** (scale 1-5, no commas)</strong>
+                    </div>
+                    <strong>review.submittedAt</strong>
+                    <strong>transaction.reference**</strong>
+                    <strong>customer.email</strong>
+                    <strong>product.name</strong>
+                    <strong>product.url</strong>
+                    <strong>product.sku</strong>
+                </div>
+
+                <p><em>*Field specifications align with service review requirements outlined above</em></p>
+
+                <div class="warning">
+                    <div>
+                        <strong class="info-box">****Rating Format:</strong> If the ratings have decimal numbers such as
+                        0.5, select all
+                        cells in the review.rating column, click on the yellow triangle and select "convert to number",
+                        then in the menu toolbar, select 'number' and click the decimal reduction button.
+                    </div>
+                </div>
+            </div>
+
+            <div id="reply-comments" class="section">
+                <h2>5. Reply Comments</h2>
+                <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+                <button id="section_5" class="next-section" onclick="scrollToNext(this)">Next Section</button>
+
+                <div class="important-note">
+                    <div>
+                        When review.reply.comment entries are included in the file, the corresponding
+                        review.reply.repliedOn field must be populated. Missing data in either field requires case
+                        rejection with appropriate CSM notification. Please refer to the section 10 (Review Import
+                        Report) of the page to know how to use the report.
+                    </div>
+                </div>
+            </div>
+
+            <div id="quality-control" class="section">
+                <h2>6. Quality Control</h2>
+                <a href="#" class="back-to-top" onclick="scrollToTop()">Back to Top</a>
+                <button id="section_6" class="next-section" onclick="scrollToNext(this)">Next Section</button>
+
+                <ul>
+                    <li>If any required data is missing from specified columns, reject the file and inform the CSM with
+                        detailed feedback regarding the deficiencies identified</li>
+                    <li><strong>GTIN value:</strong> After formatting the file from Google, some GTIN values will look
+                        like "81245+12". If that happens, select the GTIN column, then in the Excel Ribbon in the
+                        'General' section, select the dropdown menu arrow, then select "Number", and click the decimal
+                        reduction button <img src="decimal.png" alt="decimal"> until the 0 from the right disappears
+                    </li>
+                </ul>
+            </div>
+
+            <div id="data-integrity" class="section">
+                <h2>7. General Data Integrity</h2>
+                <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+                <button id="section_7" class="next-section" onclick="scrollToNext(this)">Next Section</button>
+
+                <div class="warning">
+                    <div>
+                        <strong class="info-box">CRITICAL FILE HANDLING PROTOCOL:</strong> All Excel files contain
+                        predefined macros
+                        and formulas essential for import review formatting.
+
+                    </div>
+                    <div><strong>DO NOT modify or alter any formulas without consulting team member Michael.</strong>
+                    </div>
+                </div>
+
+                <h3>Data Validation Requirements</h3>
+
+                <h4>Special Character Detection:</h4>
+                <ul>
+                    <li>Thoroughly review all files for special characters</li>
+                    <li>If uncertain about character validity, follow the established special character identification
+                        procedures</li>
+                    <li>Return the case to the CSM with detailed feedback if special characters are detected</li>
+                </ul>
+
+                <h4>Date Validation:</h4>
+                <ul>
+                    <li>All dates provided in the import file must reflect past dates only</li>
+                    <li>Future dates are not acceptable and must be modified manually</li>
+                </ul>
+            </div>
+
+            <div id="import-process" class="section">
+                <h2>8. Import Process</h2>
+                <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+                <button id="section_8" class="next-section" onclick="scrollToNext(this)">Next Section</button>
+
+                <h3>Step 1: Folder Structure Creation</h3>
+                <ul>
+                    <li>
+                        <span class="step-number">1</span><strong>Extract Shop Domain:</strong>
+                        Copy the shop domain name from the Salesforce case details
+                    </li>
+                    <li>
+                        <span class="step-number">2</span><strong>Create Directory:</strong>
+                        Create a new folder using the copied shop domain name
+                    </li>
+                    <li>
+                        <span class="step-number">3</span><strong>File Management:</strong>
+                        <ul>
+                            <li>Save the import file into the newly created folder</li>
+                            <li>Name the file using the format: domainName_Locale_1</li>
+                            <li>Save in <span class="highlight">CSV UTF-8</span> format</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Step 2: Google Sheets Data Cleanup</h3>
+                <ul>
+                    <li>
+                        <span class="step-number">1</span><strong>File Upload:</strong>
+                        Open Google Sheets and import the newly created file via drag-and-drop
+                    </li>
+                    <li>
+                        <span class="step-number">2</span><strong>Link Removal:</strong>
+                        Select all content (click top-left corner), right-click and select "Remove link"
+                    </li>
+                    <li>
+                        <span class="step-number">3</span><strong>Text Formatting:</strong>
+                        <ul>
+                            <li>Access <strong>Find & Replace</strong> function</li>
+                            <li>Use the formula: (\r\n|\n|\r)</li>
+                            <li>Click "Find"</li>
+                            <li>If no results found, click "Done"</li>
+                            <li>If results are found, click on "Replace all"</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="step-number">4</span><strong>File Export:</strong>
+                        Download the processed file in CSV format and save with "_G" suffix in the import folder
+                    </li>
+                    <li>
+                        <span class="step-number">5</span><strong>IMPORTANT:</strong> Please make sure that the
+                        review.title and the review.comment does not contain any 0 (zero) value or the #NAME
+                    </li>
+                </ul>
+
+                <div class="warning">
+                    <div>
+                        <strong>IF YOU HAVE 0 (ZERO) MAKE SURE TO DELETE THEM. IF YOU HAVE #NAME? YOU NEED TO GO TO FIND
+                            AND
+                            REPLACE AND INSTEAD OF THE FORMULA, CHOOSE VALUE THEN ENTER THE #NAME AND REPLACE IT BY
+                            BLANK.</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div id="completion" class="section">
+                <h2>9. Import Completion and Case Management</h2>
+                <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+                <button id="section_9" class="next-section" onclick="scrollToNext(this)">Next Section</button>
+
+                <h3>Salesforce Case Documentation</h3>
+
+                <h4>Case Commentary:</h4>
+                <p>Add comprehensive comment to the Salesforce case confirming import completion</p>
+
+                <h4>Integration Notes Update:</h4>
+                <ul>
+                    <li>Your name</li>
+                    <li>Import completion date</li>
+                    <li>Import type confirmation (SR/PR)</li>
+                </ul>
+
+                <h3>Administrative Tasks</h3>
+                <ol>
+                    <li>
+                        <strong>Import Report Tracking:</strong>
+                        <ul>
+                            <li>Access the dedicated case tracking file</li>
+                            <li>Apply appropriate filters</li>
+                            <li>Complete "Closed by 1st level" field</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Case Closure:</strong>
+                        <ul>
+                            <li>Close the Salesforce ticket</li>
+                            <li>Return the completed case to the assigned CSM</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div id="import-report" class="section">
+                <h2>10. Review Import Report</h2>
+                <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+                <button id="section_10" class="next-section" onclick="scrollToNext(this)">Next Section</button>
+                <p> ♨️ Please click on "Sign in" below to access the import report</p>
+                <div>
+                    <iframe width="350" height="150" frameborder="0" scrolling="no" name="import_report" title="report"
+                        src="https://etrusted.sharepoint.com/teams/Product_Experience_teams/_layouts/15/Doc.aspx?sourcedoc={d3b9d294-8702-415a-b897-d89b8573b5c2}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+                        name="import_report"></iframe>
+                </div>
+                <ul>
+                    <li>Once signed in open the report by clicking on the first right hand side icon on the corner of
+                        the
+                        frame.</li>
+                    <li>The report should open on the Sharepoint directly</li>
+                    <li>On the right corner look for the "Viewing" button. Click it and select "Open in Desktop"</li>
+                    <li>The file will open the Excel on your Laptop</li>
+                    <li>Now you can filled in the report and follow the instructions provided during the Onboarding
+                        import training</li>
+                </ul>
+                <div class="info-box">
+                    <p class="highlight">To be able to update the report correctly, you need to make sure that you
+                        are connected to the "Salesforce connector" in Excel. For that you need to click on the "refresh
+                        all" button in Excel. Right after, you are being
+                        asked to signin. Then, click on the 'Use Custom Domain'. Enter "trustedshops.me.salesforce.com".
+                        Then click on the Single sign in option</p>
+                </div>
+            </div>
+            </ul>
+
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>
