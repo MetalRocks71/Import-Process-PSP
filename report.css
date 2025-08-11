@@ -290,9 +290,11 @@
   .warning strong {
       color: #c0392b;
       padding: auto;
-      margin: 10px;
+      margin: 20px;
       padding: 5px;
+
   }
+
 
   .info-box {
       background: linear-gradient(135deg, #e3f2fd, #ecedee);
