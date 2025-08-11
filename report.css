@@ -73,7 +73,7 @@
       padding: 30px;
       border-bottom: 1px solid #e9ecef;
       opacity: 0.75;
-      border-radius: 10px;
+
   }
 
   .nav-menu h3 {
@@ -165,7 +165,7 @@
       transform: translateY(-2px);
   }
 
-    .previous-section {
+  .previous-section {
       background: #3498db;
       color: white;
       padding: 8px 15px;
