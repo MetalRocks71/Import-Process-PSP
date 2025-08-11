@@ -12,7 +12,7 @@
 
   body {
       /* Remove border-radius from body, use it on .container instead */
-      background-image: url("Trusted-Shops_Logo_rounded.png");
+      background-image: url("images/Trusted-Shops_Logo_rounded.png");
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
